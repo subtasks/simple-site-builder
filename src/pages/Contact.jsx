@@ -10,7 +10,7 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -23,7 +23,7 @@ const Contact = () => {
     });
 
     setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    e.target.reset();
   };
 
   return (
